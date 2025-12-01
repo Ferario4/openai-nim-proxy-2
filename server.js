@@ -68,7 +68,7 @@ app.post('/v1/chat/completions', async (req, res) => {
         await axios.post(`${NIM_API_BASE}/chat/completions`, {
           model: model,
           messages: [{ role: 'user', content: 'test' }],
-          max_tokens: 1
+          max_tokens: 1024
         }, {
           headers: { 'Authorization': `Bearer ${NIM_API_KEY}`, 'Content-Type': 'application/json' },
           validateStatus: (status) => status < 500
